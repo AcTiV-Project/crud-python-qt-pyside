@@ -14,3 +14,8 @@ users.
 
 - Clone this repository
 - Download database
+
+## Vistas previas
+
+![Vista previa del proyecto](image/home1.png)
+![Vista previa del proyecto](image/home2.png)
