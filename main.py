@@ -43,7 +43,7 @@ class Home(QMainWindow):
         email = self.ui.lineemail.text()
         rol = self.ui.linerol.text()
 
-        sql = "INSERT INTO usuarios (dni, nombre, email, rol) VALUES (%s, %s, %s, %s)"
+        sql = "INSERT INTO usuarios (dni, nombre, email, pais) VALUES (%s, %s, %s, %s)"
         valores = (dni, nombre, email, rol)
 
         self.cursor.execute(sql, valores)
@@ -83,7 +83,7 @@ class Home(QMainWindow):
             "ID", "DNI", "Nombre", "Email", "Rol"
         ])
 
-        sql = "SELECT id, dni, nombre, email, rol FROM usuarios"
+        sql = "SELECT id, dni, nombre, email, pais FROM usuarios"
         self.cursor.execute(sql)
         registros = self.cursor.fetchall()
 
@@ -106,7 +106,7 @@ class Home(QMainWindow):
 
         sql = """
             UPDATE usuarios
-            SET dni=%s, nombre=%s, email=%s, rol=%s
+            SET dni=%s, nombre=%s, email=%s, pais=%s
             WHERE id=%s
         """
         valores = (dni, nombre, email, rol, self.id_seleccionado)
